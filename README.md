@@ -84,36 +84,7 @@ TwinQueryClassifier/
 ├── demo.gif
 └── logo-small.png
 
-
----
-
-## 🧭 Run Locally
-
-```bash
-# Clone repo
-git clone https://github.com/Dhruvbitmesra/TwinQueryClassifier.git
-cd TwinQueryClassifier
-
-# Create venv
-python -m venv venv
-
-# Activate venv
-# Windows:
-venv\Scripts\activate
-# Linux/Mac:
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Generate stopwords (if missing)
-bash setup.sh
-# OR:
-python stopwords_gen.py
-
-# Run Streamlit app
-streamlit run app.py
-🧬 Model Details
+--🧬 Model Details
 Features Used
 
 Common tokens
@@ -158,4 +129,33 @@ GitHub: https://github.com/Dhruvbitmesra
 
 LinkedIn: https://www.linkedin.com/in/dhruv610/
 ## 📂 Project Structure
+---
+## 🧭 Run Locally
+
+```bash
+# Clone repo
+git clone https://github.com/Dhruvbitmesra/TwinQueryClassifier.git
+cd TwinQueryClassifier
+
+# Create venv
+python -m venv venv
+
+# Activate venv
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Generate stopwords (if missing)
+bash setup.sh
+# OR:
+python stopwords_gen.py
+
+# Run Streamlit app
+streamlit run app.py
+
+
 
