@@ -72,19 +72,24 @@ TwinQueryClassifier/
     ├── demo.gif
     └── logo-small.png
 
+
 ---
-##🧬 Model Details
--Feature Set
--Common tokens
--Stopword ratios
--Multiple fuzzy similarity scores
--Length & ratio differences
--LCS (Longest Common Substring)
--Bag-of-Words vectors
---Classifier
--XGBoost / RandomForest
--Probability output
--Adjustable threshold
+
+## 🧬 Model Details
+
+### **Feature Set**
+- Common tokens  
+- Stopword ratios  
+- Multiple fuzzy similarity scores  
+- Length & ratio differences  
+- LCS (Longest Common Substring)  
+- Bag-of-Words vectors  
+
+### **Classifier**
+- XGBoost / RandomForest  
+- Probability output  
+- Adjustable threshold  
+
 
 ---
 🔮 Roadmap & Future Enhancements
