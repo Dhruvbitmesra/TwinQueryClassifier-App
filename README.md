@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>🔍 Smart Duplicate Question Detector</strong><br>
-  Machine-learning powered semantic similarity detection — fast, clean, and beautifully designed.
+  Machine-learning powered semantic similarity detection 
 </p>
 
 ---
