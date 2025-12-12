@@ -1,39 +1,60 @@
-# TwinQueryClassifier
+<p align="center">
+  <img src="assets/Logo.png" width="120" style="border-radius:18px;margin-bottom:10px">
+</p>
 
-Duplicate Question Finder using machine learning. Detects semantically similar questions with NLP features, fuzzy matching, and a trained classifier. Clean Streamlit UI included.
+<h1 align="center">TwinQueryClassifier</h1>
 
-## Demo
-![Demo](assets/demo.gif)
+<p align="center">
+  <strong>🔍 Smart Duplicate Question Detector</strong><br>
+  Machine-learning powered semantic similarity detection — fast, clean, and beautifully designed.
+</p>
 
-## Overview
-TwinQueryClassifier predicts whether two questions are duplicates using:
-- NLP preprocessing
-- Token-based features
-- Fuzzy string similarity
-- Length & semantic ratios
-- Bag-of-words vectors
-- A trained ML classifier
+---
 
-## Key Features
-NLP + Feature Engineering:
-- Stopword ratios
-- Common token counts
-- Longest common substring
-- FuzzyWuzzy similarity metrics
-- CountVectorizer BoW vectors
+## 🎥 Demo
+<p align="center">
+  <img src="assets/demo.gif" width="850" style="border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.35)">
+</p>
 
-ML Model:
-- XGBoost / RandomForest
-- Probability output
-- Threshold slider
+---
 
-UI Enhancements:
-- Clean layout
-- Tips sidebar
-- Example presets
-- Downloadable history
+## ✨ Overview
+TwinQueryClassifier predicts whether two questions are duplicates using a blend of:
 
-## Project Structure
+- NLP preprocessing  
+- Token & semantic similarity  
+- Fuzzy string matching  
+- Length-based ratios  
+- Bag-of-Words vectors  
+- A trained ML classifier  
+
+Designed with **Streamlit**, offering a smooth, modern, and interactive UI.
+
+---
+
+## 🧠 Key Features
+
+### 🔹 NLP Feature Engineering  
+- Stopword ratios  
+- Common token intersection  
+- Longest Common Substring  
+- FuzzyWuzzy similarity metrics  
+- CountVectorizer BoW vectors  
+
+### 🔹 ML Model  
+- XGBoost / RandomForest  
+- Probability output  
+- Adjustable threshold slider  
+
+### 🔹 UI Enhancements  
+- Clean, minimal layout  
+- Sidebar tips  
+- Example question presets  
+- Exportable history (CSV)  
+
+---
+
+## 📂 Project Structure
 TwinQueryClassifier/
 │── app.py
 │── helper.py
@@ -51,75 +72,41 @@ TwinQueryClassifier/
     ├── demo.gif
     └── logo-small.png
 
+---
+##🧬 Model Details
+-Feature Set
+-Common tokens
+-Stopword ratios
+-Multiple fuzzy similarity scores
+-Length & ratio differences
+-LCS (Longest Common Substring)
+-Bag-of-Words vectors
+--Classifier
+-XGBoost / RandomForest
+-Probability output
+-Adjustable threshold
+
+---
+🔮 Roadmap & Future Enhancements
+
+🌟 SBERT / MiniLM Transformer embeddings
+
+📊 SHAP / LIME explainability
+
+⚡ REST API with FastAPI
+
+🎨 Lottie animations for UI polish
+
+📈 Model comparison dashboard
 
 
-Features:
+---
+❤️ Author
 
-Common tokens
-
-Stopword ratios
-
-QRatio, PartialRatio, TokenSort, TokenSet
-
-Length differences
-
-LCS ratio
-
-BoW vectors
-
-Classifier:
-
-XGBoost / RandomForest
-
-Probability output
-
-Adjustable threshold
-
-Future Enhancements
-
-Transformer embeddings (MiniLM, SBERT)
-
-SHAP/LIME explanations
-
-FastAPI backend
-
-Lottie animations
-
-Model comparison dashboard
-
-Author
-
-Built by Dhruv (BIT Mesra)
-
-Contact
+ Dhruv (BIT Mesra)
+---
+📬 Connect
 
 GitHub: https://github.com/Dhruvbitmesra
 
 LinkedIn: https://www.linkedin.com/in/dhruv610/
-
-## Run Locally
-```bash
-git clone https://github.com/Dhruvbitmesra/TwinQueryClassifier.git
-cd TwinQueryClassifier
-
-python -m venv venv
-# Windows:
-venv\Scripts\activate
-# Mac/Linux:
-source venv/bin/activate
-
-pip install -r requirements.txt
-
-bash setup.sh
-# OR:
-python stopwords_gen.py
-
-
-Model Details
-
-
-
-
-
-
-streamlit run app.py
