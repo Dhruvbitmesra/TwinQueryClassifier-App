@@ -1,147 +1,159 @@
-<h1 align="center">TwinQueryClassifier</h1>
 <p align="center">
-  <strong>Duplicate Question Finder</strong> — an ML-powered system that identifies whether two natural-language questions express the same meaning.
+  <img src="assets/logo-small.png" width="100" height="100" style="border-radius:16px" alt="Logo"/>
+</p>
+
+<h1 align="center">TwinQueryClassifier</h1>
+
+<p align="center">
+  <strong>🔍 Duplicate Question Finder</strong><br>
+  Machine-learning powered detection of semantically similar questions — fast, interpretable, and beautifully designed.
 </p>
 
 <p align="center">
   <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-blue?style=for-the-badge" />
-  <img alt="Streamlit" src="https://img.shields.io/badge/streamlit-app-red?style=for-the-badge" />
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" />
+  <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge" />
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
   <img alt="Stars" src="https://img.shields.io/github/stars/Dhruvbitmesra/TwinQueryClassifier?style=for-the-badge" />
 </p>
 
 ---
 
-## 🎥 Demo  
+## 🎥 Demo (GIF)
+
 <p align="center">
-  <!-- Replace this with your real demo.gif -->
-  <img src="assets/demo.gif" alt="TwinQueryClassifier Demo" width="850" style="border-radius:12px; box-shadow: 0 12px 40px rgba(2,6,23,0.4)" />
+  <img src="assets/demo.gif" width="850" alt="TwinQueryClassifier Demo"
+       style="border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,0.45)">
 </p>
 
 ---
 
-## ✨ Overview  
-**TwinQueryClassifier** detects duplicate questions using a hybrid NLP approach combining:
+## ✨ Overview
 
-- Custom preprocessing  
-- Stopword-aware token analysis  
-- Fuzzy string similarity metrics  
-- Bag-of-Words embeddings  
-- Feature engineering  
-- ML classification (RandomForest / XGBoost)  
-- A clean, modern Streamlit UI  
+TwinQueryClassifier predicts whether two natural-language questions are **duplicates** using:
 
-This project is built to be:  
-✨ **Deployable** • ⚡ **Fast** • 🎯 **Accurate** • 🎨 **Aesthetic**
+- NLP preprocessing  
+- Token-based features  
+- Fuzzy string similarity  
+- Length & semantic ratios  
+- Bag-of-words vectors  
+- A trained ML classifier  
+
+Built with **Streamlit**, the UI is fast, interactive, and includes confidence scoring, history tracking, and a modern animated layout.
 
 ---
 
-## 📁 Project Structure  
+## 🧠 Key Features
 
-```
+### 🔹 NLP + Feature Engineering  
+- Stopword ratios  
+- Common token counts  
+- Longest common substring  
+- Fuzzywuzzy similarity metrics  
+- Vectorized text inputs (CountVectorizer)
+
+### 🔹 ML Model  
+- Trained using XGBoost / RandomForest  
+- Probability output + threshold slider  
+- Handles feature generation automatically
+
+### 🔹 UI Enhancements  
+- Clean card layout  
+- Tips sidebar  
+- Animated interactions  
+- Example question presets  
+- Downloadable history (CSV)
+
+---
+## 📂 Project Structure
 TwinQueryClassifier/
-├─ app.py
-├─ helper.py
-├─ model.pkl
-├─ cv.pkl
-├─ stopwords.pkl
-├─ stopwords_gen.py
-├─ setup.sh
-├─ requirements.txt
-├─ render.yaml
-└─ assets/
-   └─ demo.gif   <-- add your GIF here
-```
+│── app.py
+│── helper.py
+│── model.pkl
+│── cv.pkl
+│── stopwords.pkl
+│── stopwords_gen.py
+│── test_load.py
+│── train_model.py
+│── setup.sh
+│── requirements.txt
+│── render.yaml
+│
+└── assets/
+├── demo.gif
+└── logo-small.png
+
 
 ---
 
-## 🧭 Run Locally  
+## 🧭 Run Locally
 
 ```bash
+# Clone repo
 git clone https://github.com/Dhruvbitmesra/TwinQueryClassifier.git
 cd TwinQueryClassifier
 
+# Create venv
 python -m venv venv
-# Windows
+
+# Activate venv
+# Windows:
 venv\Scripts\activate
-# Linux/macOS
+# Linux/Mac:
 source venv/bin/activate
 
+# Install dependencies
 pip install -r requirements.txt
 
-# Generate stopwords.pkl (optional)
-bash setup.sh  
-# or
+# Generate stopwords (if missing)
+bash setup.sh
+# or:
 python stopwords_gen.py
 
+# Run Streamlit app
 streamlit run app.py
-```
 
-Now open:  
-👉 http://localhost:8501
 
----
+🧬 Model Details
+Features used
 
-## ☁ Deploy on Render  
+Common tokens
 
-Render will automatically detect `render.yaml`.
+Stopword ratios
 
-### Example config:
-```yaml
-services:
-  - type: web
-    name: twinqueryclassifier
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port $PORT --server.headless true
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10
-```
+Fuzzy string match (QRatio, Partial, Token Sort, Token Set)
 
-### If your model file is large (>50MB):
+Length differences
 
-```bash
-git lfs install
-git lfs track "*.pkl"
-git add .gitattributes model.pkl cv.pkl
-git commit -m "Add large model files"
-git push
-```
+LCS ratio
 
----
+BoW vector for each question
 
-## 🧠 Model Details  
+Classifier
 
-### Features used  
-- Token overlap ratios  
-- Stopword-based ratios  
-- Length differences  
-- Longest common substring  
-- FuzzyWuzzy metrics  
-- Bag-of-Words vectors for each question (3k features × 2)  
-- 15+ engineered features  
+XGBoost / RandomForest
 
-### Algorithms  
-- RandomForestClassifier  
-- XGBoost Classifier (optional, more accurate)  
+Outputs probability score
 
----
+Threshold-adjustable prediction
 
-## 🚀 Future Enhancements  
-- Transformer embeddings (SBERT / BERT)  
-- LIME/SHAP explainability  
-- FastAPI backend + Streamlit frontend split  
-- Animated UI with Lottie  
-- Dataset exploration dashboard  
+🔮 Future Enhancements
 
----
+Transformer embeddings (MiniLM, Sentence-BERT)
 
-## ❤️ Author  
-Built with passion by **Dhruv (BIT Mesra)**.  
+Explanation module using SHAP/LIME
 
----
+API endpoints via FastAPI
 
-## 📬 Contact  
-GitHub: https://github.com/Dhruvbitmesra  
+Lottie animations for UI polish
 
+Model comparison dashboard
+
+❤️ Author
+
+Built with passion by Dhruv (BIT Mesra).
+If you like this project, please ⭐ star the repo — it helps a lot!
+📬 Contact
+
+GitHub: https://github.com/Dhruvbitmesra
+
+LinkedIn: https://www.linkedin.com/in/dhruv610/
