@@ -54,7 +54,7 @@ Built with **Streamlit**, the UI is fast, interactive, and includes confidence s
 ### 🔹 ML Model  
 - Trained using XGBoost / RandomForest  
 - Probability output + threshold slider  
-- Handles feature generation automatically
+- Automatically handles all text processing
 
 ### 🔹 UI Enhancements  
 - Clean card layout  
@@ -65,6 +65,8 @@ Built with **Streamlit**, the UI is fast, interactive, and includes confidence s
 
 ---
 ## 📂 Project Structure
+
+
 TwinQueryClassifier/
 │── app.py
 │── helper.py
@@ -106,15 +108,13 @@ pip install -r requirements.txt
 
 # Generate stopwords (if missing)
 bash setup.sh
-# or:
+# OR:
 python stopwords_gen.py
 
 # Run Streamlit app
 streamlit run app.py
-
-
 🧬 Model Details
-Features used
+Features Used
 
 Common tokens
 
@@ -126,34 +126,36 @@ Length differences
 
 LCS ratio
 
-BoW vector for each question
+BoW vectors
 
 Classifier
 
 XGBoost / RandomForest
 
-Outputs probability score
+Probability output
 
-Threshold-adjustable prediction
+Threshold-adjustable
 
 🔮 Future Enhancements
 
 Transformer embeddings (MiniLM, Sentence-BERT)
 
-Explanation module using SHAP/LIME
+SHAP/LIME explanations
 
-API endpoints via FastAPI
+FastAPI backend
 
-Lottie animations for UI polish
+Lottie animations
 
 Model comparison dashboard
 
 ❤️ Author
 
-Built with passion by Dhruv (BIT Mesra).
-If you like this project, please ⭐ star the repo — it helps a lot!
-📬 Contact
+ Dhruv (BIT Mesra)
 
+
+📬 Contact
 GitHub: https://github.com/Dhruvbitmesra
 
 LinkedIn: https://www.linkedin.com/in/dhruv610/
+## 📂 Project Structure
+
